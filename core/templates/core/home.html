@@ -405,6 +405,49 @@
 @keyframes blink {
   50% { opacity: 0; }
 }
+
+/* ================= RESPONSIVE FIXES ================= */
+
+/* Hero: ajuste de padding e tamanho do texto em telas pequenas */
+@media (max-width: 768px) {
+    #main-content h1 {
+        font-size: 3rem; /* antes era 6xl */
+    }
+    #main-content h2 {
+        font-size: 2rem; /* antes 4xl */
+    }
+    #main-content p {
+        font-size: 0.9rem; /* textos menores em mobile */
+    }
+    #main-content .px-8 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    #main-content .py-32 {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    #main-content .grid {
+        grid-template-columns: 1fr !important; /* força 1 coluna em mobile */
+        gap: 2rem !important;
+    }
+}
+
+/* Ajusta elementos com blur grande e tamanho fixo */
+@media (max-width: 1024px) {
+    .absolute.w-\[600px\].h-\[600px\] {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+/* Ajusta start screen para caber em mobile */
+#start-screen p.text-lg {
+    font-size: 1rem;
+}
+#start-screen p.text-sm {
+    font-size: 0.8rem;
+}
 </style>
 
 <script>
