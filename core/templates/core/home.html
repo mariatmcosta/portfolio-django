@@ -6,47 +6,12 @@
 {% block content %}
 
 <!-- ================= START SCREEN ================= -->
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-    
-      const startScreen = document.getElementById("start-screen");
-    
-      function startGameAndAudio() {
-          if (!startScreen) return;
-    
-          // Garante que o áudio só toca após gesto do usuário
-          const typingSound = new Audio("{% static 'sounds/typing.mp3' %}");
-          typingSound.volume = 0.08;
-          typingSound.play().catch(() => {});
-    
-          // Esconde a tela inicial
-          startScreen.style.display = "none";
-    
-          // Inicia a experiência
-          if (typeof startExperience === "function") {
-              startExperience();
-          }
-      }
-    
-      // Teclado: ENTER
-      document.addEventListener("keydown", function(e) {
-          if (e.key === "Enter") startGameAndAudio();
-      });
-    
-      // Mobile/Touch: toque em qualquer lugar da tela
-      document.addEventListener("touchend", function initTouch() {
-          startGameAndAudio();
-          document.removeEventListener("touchend", initTouch);
-      });
-    
-      // Desktop / clique
-      document.addEventListener("click", function initClick() {
-          startGameAndAudio();
-          document.removeEventListener("click", initClick);
-      });
-    
-    });
-</script>
+<section id="start-screen" class="min-h-screen bg-black text-emerald-400 font-mono flex items-center justify-center">
+  <div class="text-center">
+    <p class="text-lg tracking-widest">PRESSIONE ENTER PARA INICIAR</p>
+    <p class="text-sm text-zinc-600 mt-4">(som habilitado)</p>
+  </div>
+</section>
 
 <!-- ================= TERMINAL INTRO ================= -->
 <section id="terminal-section" class="min-h-screen bg-black text-emerald-400 font-mono flex items-center justify-center px-6 hidden">
@@ -573,5 +538,47 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    
+      const startScreen = document.getElementById("start-screen");
+    
+      function startGameAndAudio() {
+          if (!startScreen) return;
+    
+          // Garante que o áudio só toca após gesto do usuário
+          const typingSound = new Audio("{% static 'sounds/typing.mp3' %}");
+          typingSound.volume = 0.08;
+          typingSound.play().catch(() => {});
+    
+          // Esconde a tela inicial
+          startScreen.style.display = "none";
+    
+          // Inicia a experiência
+          if (typeof startExperience === "function") {
+              startExperience();
+          }
+      }
+    
+      // Teclado: ENTER
+      document.addEventListener("keydown", function(e) {
+          if (e.key === "Enter") startGameAndAudio();
+      });
+    
+      // Mobile/Touch: toque em qualquer lugar da tela
+      document.addEventListener("touchend", function initTouch() {
+          startGameAndAudio();
+          document.removeEventListener("touchend", initTouch);
+      });
+    
+      // Desktop / clique
+      document.addEventListener("click", function initClick() {
+          startGameAndAudio();
+          document.removeEventListener("click", initClick);
+      });
+    
+    });
+    </script>
 
 {% endblock %}
