@@ -539,4 +539,36 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    
+    const startScreen = document.getElementById("start-screen");
+    
+    function startGameAndAudio() {
+        startExperience(); // função que você já definiu
+        startScreen.style.display = "none";
+    }
+    
+      // Teclado: ENTER
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+            startGameAndAudio();
+        }
+    });
+    
+      // Mobile/Touch: toque em qualquer lugar da tela
+    document.addEventListener("touchstart", function initTouch() {
+        startGameAndAudio();
+        document.removeEventListener("touchstart", initTouch); // remove para não disparar de novo
+    });
+    
+      // Clique também funciona para desktop sem teclado
+    document.addEventListener("click", function initClick() {
+        startGameAndAudio();
+        document.removeEventListener("click", initClick);
+    });
+    
+});
+</script>
+
 {% endblock %}
