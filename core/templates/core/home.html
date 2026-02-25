@@ -472,8 +472,11 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   let lineIndex = 0;
+  let hasStarted = false;
 
   function startExperience() {
+    if (hasStarted) return;   
+    hasStarted = true;
     // Desbloqueia o áudio imediatamente no evento do ENTER
     typingSound.play().then(() => {
         typingSound.pause();
