@@ -16,23 +16,23 @@ Atualmente, a aplicação realiza renderização server-side e possui estrutura 
 ---
 
 ## Tecnologias Utilizadas
-Backend
-	-	Python
-	-	Django
-	-	PostgreSQL (produção)
-	-	SQLite (desenvolvimento)
-	-	Gunicorn
-	-	WhiteNoise
+Backend:
+-	Python
+-	Django
+-	PostgreSQL (produção)
+-	SQLite (desenvolvimento)
+-	Gunicorn
+-	WhiteNoise
 
-Frontend
-	-	HTML
-	-	Tailwind CSS
-	-	JavaScript (Vanilla JS)
+Frontend:
+-	HTML
+-	Tailwind CSS
+-	JavaScript (Vanilla JS)
 
-Infraestrutura
-	-	dj-database-url
-	-	python-dotenv
-	-	psycopg2-binary
+Infraestrutura:
+-	dj-database-url
+-	python-dotenv
+-	psycopg2-binary
 
 ---
 
@@ -127,29 +127,29 @@ O sistema utiliza o ORM do Django para modelagem relacional.
 
 Principais Entidades:
 
-Usuario
-	-	nome
-	-	email
-	-	bio
-	-	foto_url
+Usuario:
+-	nome
+-	email
+-	bio
+-	foto_url
 
-Tecnologia
-	-	nome
+Tecnologia:
+-	nome
 
-Projeto
-	-	titulo
-	-	descricao
-	-	imagem_url
-	-	github_url
-	-	data_criacao
-	-	usuario (ForeignKey)
-	-	tecnologias (ManyToMany)
+Projeto:
+-	titulo
+-	descricao
+-	imagem_url
+-	github_url
+-	data_criacao
+-	usuario (ForeignKey)
+-	tecnologias (ManyToMany)
 
-MensagemContato
-	-	nome
-	-	email
-	-	mensagem
-	-	data_envio
+MensagemContato:
+-	nome
+-	email
+-	mensagem
+-	data_envio
 
 ---
 
@@ -164,10 +164,10 @@ Projeto ─────────── N Tecnologia
    │
 MensagemContato (entidade independente)
 ```
-Relações
-	-	Um Usuario pode possuir vários Projetos
-	-	Um Projeto pode utilizar várias Tecnologias
-	-	MensagemContato é uma entidade independente
+Relações:
+-	Um Usuario pode possuir vários Projetos
+-	Um Projeto pode utilizar várias Tecnologias
+-	MensagemContato é uma entidade independente
 
 ---
 
@@ -189,7 +189,7 @@ Resposta HTTP
 ---
 
 ## Possíveis Melhorias Futuras
-- Implementação de CRUD completo
+- 	Implementação de CRUD completo
 -	Criação de API REST com Django REST Framework
 -	Integração AJAX para consumo dinâmico de dados
 -	Registro dos modelos no Django Admin
@@ -209,3 +209,4 @@ Resposta HTTP
 
 ## Autora: Maria Eduarda Taveiros Martins Costa
 Projeto desenvolvido como portfólio técnico, proposto como projeto pela Healthtech Júnior Einstein.
+
